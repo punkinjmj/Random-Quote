@@ -1,22 +1,20 @@
-let quotes = [
-  'All we have to decide is what to do with the time that is given us',
-  'Talk is cheap, show me the code.',
-  'Do or do not. There is no try.',
-  'Do I Look Civilized To You?',
-  'To infinity and beyond'
+const quotes = [
+  ['All we have to decide is what to do with the time that is given us', 'Gandalf The Grey', 'Lord of the Rings', 1954],
+  ['Talk is cheap, show me the code.', 'Linus Torvalds', 'Programing Wisdom on Twitter', 2009],
+  ['Do or do not. There is no try.', 'Yoda', 'Starwars: a New  Hope', 1978 ],
+  ['Do I Look Civilized To You?', 'John Wick', 'John Wick', 2014],
+  ['To infinity and beyond', 'Buzz Lightyear', 'Toystory', 1995]
 ]
 
-let source = [
-  'Gandalf The Grey',
-  'Linus Torvalds',
-  'Yoda',
-  'John Wick',
-  'Buzz Lightyear'
-]
+function getRandomQuotes() {
+  return Math.floor(Math.random() * quotes.length);
+}
+
 
 function printQuote() {
-  let random = Math.floor(Math.random() * quotes.length);
-  document.getElementById('quote-box').innerHTML = `<div class="quote">${quotes[random]}</div> <div class="source">${source[random]}</div>`;
+  random = getRandomQuotes();
+  document.getElementById('quote').innerHTML = `${quotes[random][0]}`;
+  document.getElementById('source').innerHTML = `${quotes[random][1]}<span class="citation" id="citition" >${quotes[random][2]}</span><span class="year" id = "year">${quotes[random][3]}</span>`;
 }
 
 
