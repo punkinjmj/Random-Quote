@@ -6,13 +6,13 @@ const quotes = [
   ['To infinity and beyond', 'Buzz Lightyear', 'Toystory', 1995]
 ]
 
-function getRandomQuotes() {
+function getRandomQuote() {
   return Math.floor(Math.random() * quotes.length);
 }
 
 
 function printQuote() {
-  random = getRandomQuotes();
+  random = getRandomQuote();
   document.getElementById('quote').innerHTML = `${quotes[random][0]}`;
   document.getElementById('source').innerHTML = `${quotes[random][1]}<span class="citation" id="citition" >${quotes[random][2]}</span><span class="year" id = "year">${quotes[random][3]}</span>`;
 }
